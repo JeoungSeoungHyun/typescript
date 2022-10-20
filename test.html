@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <div>
+            <label for="test1">
+                <input type="radio" id="test1" name="test" value="test1">test1
+            </label>
+        </div>
+        <div>
+            <label for="test2">
+                <input type="radio" id="test2" name="test" value="test2">test2
+            </label>
+        </div>
+        <div>
+            <label for="test3">
+                <input type="radio" id="test3" name="test" value="test3">test3
+            </label>
+        </div>
+    </form>
+
+    <script>
+        function test(...nums){
+            return nums.reduce((a,b,i,arr)=>{
+                console.log(a,b,i,arr);
+                return a+b;
+            },10);
+        }
+        //console.log(test(1,2,3,4,5))
+
+        console.log('')
+        function test2(...nums){
+            return nums.reduceRight((a,b,i,arr)=>{
+                console.log(a,b,i,arr);
+                return a+b;
+            },10);
+        }
+        //console.log(test2(1,2,3,4,5))
+
+        function test3(...nums){
+            let total = 0;
+            for(let num of nums){
+                total += num;
+                console.log(`total : ${total}`)
+            }
+            return total
+        }
+        //console.log(test3(1,2,3,4,5))
+
+        function test4(...nums){
+            return nums.map((v,i,arr)=>{
+                console.log(v,i,arr);
+                return v+1;
+            });
+        }
+        //console.log(test4(1,2,3,4))
+
+        let testob = {
+            name: 'sh',
+            age: '31'
+        }
+        
+        let {age, ...rest} = testob;
+
+        console.log(testob);
+        console.log(rest);
+
+    </script>
+</body>
+</html>
