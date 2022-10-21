@@ -3,19 +3,13 @@
      * Let's make a game 🕹
      */
 
-    type Position = {
-        x:number,
-        y:number
-    }
+    type Direction = 'up' | 'down' | 'left' | 'right';
 
-    type Command = 'up' | 'down' | 'left' | 'right';
+    const position = {x:0,y:0};
 
-    let position:Position = {x:0,y:0};
+    function move(direction:Direction):void{
 
-
-    function move(command:Command):void{
-
-        switch(command){
+        switch(direction){
             case('up'):
                 position.y += 1;
                 break;
