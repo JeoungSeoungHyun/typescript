@@ -25,5 +25,4 @@
     numbers!.push(2);
 
     const button = document.querySelector('class')!;
-    button.nodeValue
 }
