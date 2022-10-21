@@ -2,27 +2,29 @@
  * Let's make a calculator 🧮
  */
 
-type func = 'add' | 'substract' | 'multiply' | 'divide' | 'remainder';
+type Command = 'add' | 'substract' | 'multiply' | 'divide' | 'remainder';
 
-function calculate(func:func, num1:number, num2:number): number{
+function calculate(command:Command, a:number, b:number): number{
     let result:number;
 
-    switch (func){
+    switch (command){
         case 'add':
-            result = num1 + num2;
+            result = a + b;
             break;
         case 'substract':
-            result = num1 - num2;
+            result = a - b;
             break;
         case 'multiply':
-            result = num1 * num2;
+            result = a * b;
             break;
         case 'divide':
-            result = num1 / num2;
+            result = a / b;
             break;
         case 'remainder':
-            result = num1 % num2;
+            result = a % b;
             break;
+        default:
+            throw Error('unknown command');
     }
 
     return result;
