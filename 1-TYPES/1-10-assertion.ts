@@ -19,7 +19,7 @@
     function findNumbers (): number[] | undefined {
         return undefined;
     }
-    
+
     // undefined가 되지 않는다는 것을 장담하는 !
     const numbers = findNumbers()!;
     numbers!.push(2);

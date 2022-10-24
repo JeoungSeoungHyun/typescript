@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+
+    <style>
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex;">
+        <input id="input" type="text">
+        <div id="count">(0/1000)</div>
+    </div>
+    <button id="button" class="red">확인</button>
+    <script>
+        let textCount = 0;
+
+        $("#input").keyup((e)=>{
+            console.log($("#input").val().length);
+            textCount = $("#input").val().length;
+            $("#count").text(`(${textCount}/1000)`);
+
+            if(textCount > 0){
+                $("button").removeClass('red');
+                $("button").addClass('blue');
+            } else{
+                $("button").removeClass('blue');
+                $("button").addClass('red');
+            }
+        });
+
+    </script>
+</body>
+</html>
