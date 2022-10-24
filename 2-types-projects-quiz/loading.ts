@@ -26,13 +26,13 @@
           console.log('👀 loading...');
           break;
         case('success'):
-          console.log('😃 loaded');
+          console.log(`😃 ${state.response.body}`);
           break;
         case('fail'):
-          console.log('😱 no network');
+          console.log(`😱 ${state.reason}`);
           break;
         default:
-          throw Error('unknown state!!');
+          throw Error(`unknown state!! : ${state}`);
       }
   }
 
