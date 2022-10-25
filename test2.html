@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
+    <button id="test" onclick="run()">클릭</button>
+    
+    <table id="test2">
+        <tr>a
+            <td>b</td>
+            <td>c</td>
+        </tr>
+    </form>
+    <!-- <div id="test2">테스트2</div> -->
     <script>
         //let test = 1;
         //console.log(test);
@@ -22,6 +31,32 @@
         }
 
         console.log(test);
+
+        function run(){
+            var result = confirm('메세지를 전송하시곘습니까?');
+            if(result){
+                alert("전송!")
+            } else {
+                alert("취소!")
+            }
+        }
+
+        let str = `<div id="infocheck" class="map_layerpop"><div class="layer_tit">IoT-TEST-02<div class="float_right"><button><a href="javascript:openSearch('@@01225014184');"><img src="../images/common/pop_btn05_text.png" alt="운행정보" /></button></a>&nbsp;<button onclick="initPanorama(35.17414 ,129.07153)"  style=""color:#000;""><a href="javascript:display()"><img src="../images/common/pop_btn01_text.png" alt="지도" /></a></button>&nbsp;<!--<a href="#" title="새로고침"><img src="../images/common/pop_btn02.png" alt="새로고침" /></a>--><a href="javascript:infoWindow.setMap(null);" title="종료"><img src="../images/common/pop_exit.png" alt="종료" /></a></div></div><table id="test" cellpadding="0" cellspacing="0" width="100%" class="layerpop_tbl"><colgroup><col width="20%" /><col width="30%" /><col width="20%" /><col width="30%" /></colgroup><tr><th>단말기번호</th><td>01225014184</td><th>최근시동ON</th><td>2022-10-22 14:21:17</td></tr><tr><th>속도</th><td>0 km/h</td><th>최근시동OFF</th><td>2022-10-20 11:01:58</td></tr><tr><th>GPS개수</th><td><img src="../images/common/gps0.png" alt="GPS개수" width="15">&nbsp;00개</td><th>최종수신일시</th><td>2022-09-23 11:06:34</td></tr><tr><th>단말전압</th><td><img src="../images/common/battery2.png" alt="단말전압상태" width="20">&nbsp;3.6 V</td><th>일주행거리<br />총주행거리</th><td>0 km<br />201.77 km</td></tr><tr><th height="30" style="border-radius:0px 0px 0px 2px; border-bottom:0px;">주소</th><td height="30" colspan="3" style="border-bottom:0px;">부산광역시 부산진구 양정동 406-8</td></tr></table></div>`
+
+        console.log(str);
+        let temp = str.indexOf("최종수신일시");
+        console.log(temp);
+
+        let temp2 = str.indexOf("<td>", temp);
+        console.log(temp2);
+        
+        let temp3 = str.indexOf("<", temp2+1);
+        console.log(str.substring(temp2+4,temp3));
+
+
+        //console.log(document.querySelector("#test"))
+        //console.log(document.getElementById("test2").getElementsByTagName("td"));
+
     </script>
 </body>
 </html>

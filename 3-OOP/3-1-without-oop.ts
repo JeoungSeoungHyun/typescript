@@ -14,6 +14,7 @@
         }
 
         cooffeeBeans -= shots * BEANS_GRAMM_PER_SHOT;
+        
         return {
             shots, // 키와 밸류의 이름이 동일하다면 키의 생략이 가능
             hasMilek: false,
