@@ -45,4 +45,42 @@
     //const maker = new CoffeMaker(32);
     const maker = CoffeMaker.makeMachine(32);
     maker.fillCoffeeBeans(32);
+
+    class User {
+        //private firstName: string;
+        //private lastName: string;
+        // fullName: string;
+        private internalAge = 4;
+        constructor(private firstName:string, private lastName:string){
+            this.firstName = firstName;
+            this.lastName = lastName;
+            //this.fullName = `${this.firstName} ${this.lastName}`
+        }
+
+        get fullName(): string{
+            return `${this.firstName} ${this.lastName}`
+        }
+
+        get age(): number{
+            return this.internalAge;
+        }
+
+        set age(num:number){
+            if(num < 0){
+                throw new Error('invalid num for age!! age should be greater than 0')
+            }
+            this.internalAge = num;
+        }
+
+    }
+
+    const user = new User('Steve','Jobs');
+    console.log(user.age);
+    user.age = 60;
+    console.log(user);
+
+    // user.firstName = 'SeongHyun'
+    console.log(user.fullName); // constructor는 초기 한번만 실행
+
+
 }
