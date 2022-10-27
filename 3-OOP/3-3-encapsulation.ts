@@ -71,7 +71,6 @@
             }
             this.internalAge = num;
         }
-
     }
 
     const user = new User('Steve','Jobs');
