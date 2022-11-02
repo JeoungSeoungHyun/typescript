@@ -6,6 +6,10 @@ class Animal{
     }
 }
 
+class Cute {
+    boolean cute = true;
+}
+
 class Cat extends Animal{
     String name = "고양이";
 

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body onload="init()">
+    <div style="display: flex;">
+        <div id="test" style="display: none; margin-right:20px;">test</div>
+        <button onclick="hide()">사라지기</button>
+    </div>
+
+    <script>
+        function init(){
+            console.log('init 실행');
+
+            $("#test").fadeIn(2000);
+            
+        }
+
+        function hide(){
+            console.log('hide 실행')
+
+            $("#test").fadeOut(2000);
+        }
+    </script>
+</body>
+</html>
