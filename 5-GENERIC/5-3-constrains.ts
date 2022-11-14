@@ -57,5 +57,5 @@
         return obj[attr];
     }
 
-    console.log(getValue(obj, 'name')); // ellie
+    console.log(getValue(obj, 'name')); 
 }
