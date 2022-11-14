@@ -3,7 +3,7 @@
      * Let's make a game 🕹
      */
 
-    type Direction = 'up' | 'down' | 'left' | 'right';
+    type Direction = 'up' | 'down' | 'left' | 'right' | 'he';
 
     const position = {x:0,y:0};
 
@@ -23,6 +23,7 @@
                 position.x += 1;
                 break;
             default:
+                //const invalid: never = direction; // 이와 같은 코드를 추가하여 컴파일 단계에서 Error를 찾을 수 있다.
                 throw Error('unknwon command!');
         }
     }
