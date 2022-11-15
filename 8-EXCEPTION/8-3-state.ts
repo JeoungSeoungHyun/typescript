@@ -1,10 +1,18 @@
 {
-    class TimeoutError extends Error {}
+    // 이와 같이 응답에 대한 type을 지정하여 Error State를 구분하는 것이 좋다.
+    type NetWorkErrorState = {
+        result: 'fail';
+        reason: 'offline' | 'down' | 'timeout';
+    };
 
-    class OfflineError extends Error {}
+    type SuccessState = {
+        result: 'succeess';
+    };
+
+    type ResultState = SuccessState | NetWorkErrorState;
 
     class NetworkClient {
-        tryConnect (): void {
+        tryConnect (): ResultState {
             throw new Error('no network!');
         }
     }
@@ -24,11 +32,8 @@
         run() {
             try {
                 this.userService.login();
-            } catch(error) { //catch에서 받는 error는 any타입이다.
+            } catch(error) {
                 // show dialog to user
-                if(error instanceof OfflineError){
-                    // 이처럼 상세한 에러의 종류를 알 수 있지만 Error State를 사용하는 것이 좋다고 한다.
-                }
             }
         };
     }
