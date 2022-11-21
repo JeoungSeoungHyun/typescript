@@ -6,7 +6,7 @@
         data: string;
     };
 
-    type VideoMetaData =  Pick<Video, 'id' | 'title'>;
+    type VideoMetaData =  Pick<Video, 'id' | 'title' >;
 
     function getVideo(id: string): Video {
         return {

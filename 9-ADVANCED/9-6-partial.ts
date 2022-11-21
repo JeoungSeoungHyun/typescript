@@ -16,6 +16,6 @@
         label: 'study',
         priority: 'high'
     };
-    const updated =updateTodo(todo, {priority: 'low'});
-    console.log(updated);
+    const updated = updateTodo(todo, {priority: 'low'});
+    console.log(updated); 
 }
